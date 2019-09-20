@@ -1,4 +1,7 @@
-import math
+import random
+import time
+
+n = 10000
 
 def insertion_sort(array):
     for i in range(1, len(array)):
@@ -10,5 +13,15 @@ def insertion_sort(array):
         array[tailIndex+1] = newMember
     return array
 
-array1 = [math.log(3), math.log2(3), math.log10(4), math.log(4), math.log(3)]
-print(insertion_sort(array1))
+unordered = []
+for i in range(0, n):
+    num = random.randint(0, n)
+    unordered.append(num)
+
+start = time.time()
+insertion_sort(unordered)
+end = time.time()
+res = end-start
+
+if __name__ == "__main__":
+    print(res)
