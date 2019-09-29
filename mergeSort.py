@@ -32,7 +32,7 @@ import insertionSort
 import random
 import time
 
-n = 10000
+n = 100000
 
 unordered = []
 for i in range(0, n):
@@ -50,4 +50,3 @@ print(f'{n}개의 데이터를 병합정렬로 처리하는 속도:')
 print(res2)
 print('삽입정렬의 처리속도는 병합정렬의 처리속도보다')
 print(f'{insertionSort.res/res2}배 시간이 걸린다.')
-

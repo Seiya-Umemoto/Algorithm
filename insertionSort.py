@@ -1,7 +1,7 @@
 import random
 import time
 
-n = 10000
+n = 100000
 
 def insertion_sort(array):
     for i in range(1, len(array)):
