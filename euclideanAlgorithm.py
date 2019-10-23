@@ -4,6 +4,8 @@ def euclideanAlgorithm(a, b):
     if b == 0:
         return a
     else:
-        euclideanAlgorithm(b, a%b)
+        return euclideanAlgorithm(b, a%b)
 
 print(euclideanAlgorithm(78696,19332))
+print(euclideanAlgorithm(6, 36))
+print(euclideanAlgorithm(36, 30))

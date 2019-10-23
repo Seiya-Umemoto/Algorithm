@@ -5,10 +5,12 @@ def mergeSort(A):
         return A
     else:
         middle = len(A)//2
-        for i in range(0, middle):
-            left.append(A[i])
-        for i in range(middle, len(A)):
-            right.append(A[i])
+        left = A[:middle]
+        # for i in range(0, middle):
+        #     left.append(A[i])
+        right = A[middle:]
+        # for i in range(middle, len(A)):
+        #     right.append(A[i])
     left = mergeSort(left)
     right = mergeSort(right)
     return merge(left, right)
@@ -32,7 +34,7 @@ import insertionSort
 import random
 import time
 
-n = 100000
+n = 10000
 
 unordered = []
 for i in range(0, n):
@@ -44,9 +46,9 @@ mergeSort(unordered)
 end = time.time()
 res2 = end-start
 
-print(f'{insertionSort.n}개의 데이터를 삽입정렬로 처리하는 속도:')
-print(insertionSort.res)
-print(f'{n}개의 데이터를 병합정렬로 처리하는 속도:')
-print(res2)
-print('삽입정렬의 처리속도는 병합정렬의 처리속도보다')
-print(f'{insertionSort.res/res2}배 시간이 걸린다.')
+if __name__ == "__main__":
+    print(f'The speed of processing {insertionSort.n} data with Insertion Sort:')
+    print(insertionSort.res)
+    print(f'The speed of processing {n} data with Merge Sort:')
+    print(res2)
+    print(f'It takes for Insertion Sort to process data {insertionSort.res/res2} times longer than Merge Sort does.')
